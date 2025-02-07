@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+dynamic/dynamic-array
+dynamic/simple-dynamic
+dynamic/static-allocation
+oop-intro/point-single
