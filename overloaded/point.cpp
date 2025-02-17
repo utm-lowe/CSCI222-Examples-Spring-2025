@@ -82,3 +82,32 @@ std::ostream& operator<<(std::ostream &os, const Point &p)
     os << "(" << p.getX() << ", " << p.getY() << ")";
     return os;
 }
+
+///////////////////////////////////////
+// Member Operators
+///////////////////////////////////////
+Point Point::operator*(double rhs) const
+{
+    Point result{*this};
+
+    result.x *= rhs;
+    result.y *= rhs;
+
+    return result;
+}
+
+// assignment
+Point& Point::operator=(const Point &rhs)
+{
+    // copy the fields
+    x = rhs.x;
+    y = rhs.y;
+
+    return *this;
+}
+
+//double * Point multiplication
+Point operator*(double lhs, const Point &rhs)
+{
+    return rhs * lhs;
+}
