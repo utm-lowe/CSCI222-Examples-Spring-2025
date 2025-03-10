@@ -13,6 +13,8 @@
 #include "executive.h"
 #include <iostream>
 
+using namespace std;
+
 int main() {
     // Create instances of each class
     Employee basicEmployee("John Doe", 50000);
@@ -31,6 +33,18 @@ int main() {
     std::cout << "Executive Details:" << std::endl;
     regionalExecutive.displayInfo();
     std::cout << "Bonus: $" << regionalExecutive.calculateBonus() << "\n" << std::endl;
+
+    // polymorphism demonstration
+    Employee *eptr;
+
+    eptr = &basicEmployee;
+    cout << "eptr for basic employee" << endl;
+    eptr->displayInfo();
+
+    eptr = &departmentManager;
+    cout << "eptr for dpeartment manager" << endl;
+    eptr->displayInfo();
+
 
     return 0;
 }
